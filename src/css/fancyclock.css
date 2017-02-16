@@ -1,0 +1,195 @@
+.clock {
+  border-radius: 100em;
+  background: white;
+  font-family: sans-serif;
+  position:absolute;
+  padding:0;
+  width:15em;
+  height:15em;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 1px rgba(0,0,0, .5);
+  position: absolute;
+}
+
+.clock > div {
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+.clock .hour {
+  border-radius: 10em;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left: -1em;
+  margin-top: -1em;
+  transform-origin: 0% 0%;
+}
+
+.clock .ampm:hover,
+.clock .hour:hover,
+.clock .min:hover,
+.clock .sec:hover {
+  cursor: pointer;
+  background: #6bf;
+  color: white;
+  z-index: 20;
+}
+
+.clock .min:hover span {
+  border-color: white;
+  background: white;
+}
+.clock .sec:hover, .axel {
+  background: red;
+}
+
+.clock .ampm:hover {
+  border-color: #5af;
+}
+
+.clock .min {
+  border-radius: .125em;
+  width: .5em;
+  height: auto;
+  text-align: center;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left: -.25em;
+  margin-top: -.5em;
+}
+
+.clock .min span {
+  border: 1px solid gray;
+  background: gray;
+  width: 0em;
+  height: .5em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.clock .sec, .axel {
+  border-radius: 10em;
+  width: .75em;
+  height: .75em;
+  text-align: center;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left: -.375em;
+  margin-top: -.375em;
+}
+
+.clock .ampm {
+  background: rgba(255,255,255, .75);
+  border: 1px solid grey;
+  border-radius: .25em;
+  width: 3em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -1.5em;
+  margin-top: -.75em;
+  z-index: 20;
+  box-shadow: 0px 1px 1px rgba(0,0,0, .1);
+}
+
+.now, .stopWatch {
+  cursor: pointer;
+  background: white;
+  border-radius: 10em;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 2em;
+  height: 2em;
+  padding: 0em;
+  line-height: 2em;
+  text-align: center;
+  box-shadow: 0px 1px 1px rgba(0,0,0, .5);
+}
+
+.now:after {
+  content: "\23F0";
+}
+
+.stopWatch {
+  right: unset;
+  left: 0px;
+}
+
+.stopWatch.play:after {
+  content: '\25B6';
+}
+
+.stopWatch.pause:after {
+  content: '=';
+  font-size: 1.25em;
+  font-weight: bold;
+  transform: rotate(90deg);
+  display: block;
+}
+
+.hourHand {
+  border-left: .5em solid black;
+  border-bottom: .5em solid black;
+  border-top: .5em solid transparent;
+  border-right: .5em solid transparent;
+  width: 0;
+  height: 0;
+  margin-top: -.25em;
+  transform-origin: 0 0;
+  transform: skewY(175deg) scaleX(4) scaleY(.5);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+}
+
+.minuteHand {
+  border-left: .5em solid black;
+  border-bottom: .5em solid black;
+  border-top: .5em solid transparent;
+  border-right: .5em solid transparent;
+  width: 0;
+  height: 0;
+  margin-top: -.25em;
+  transform-origin: 0 0;
+  transform: skewY(178deg) scaleX(6) scaleY(.5);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+}
+
+.secondHand {
+  border-left: .5em solid red;
+  border-bottom: .5em solid red;
+  border-top: .5em solid transparent;
+  border-right: .5em solid transparent;
+  width: 0;
+  height: 0;
+  margin-top: -.25em;
+  transform-origin: 0 0;
+  transform: skewY(178deg) scaleX(7) scaleY(.5);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+}
+
+.axel {
+  z-index: 15;
+}
